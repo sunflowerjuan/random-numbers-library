@@ -116,6 +116,28 @@ Random(error=0.05, deterministic=False)
 lcg = LinealCongruence(xo_seed=seed, k=551757622, c=12345, g=31)
 ```
 
+Con los valores:
+
+- **m = 2^31 = 2,147,483,648**  
+  Se eligió este módulo porque:
+
+  - Es lo suficientemente grande para garantizar secuencias largas antes de repetirse.
+  - Se ajusta a enteros de 32 bits, optimizando eficiencia.
+  - Es un estándar en muchos LCG conocidos.
+
+- **a = 551757622 (multiplicador)**
+
+  - Escogido para cumplir las condiciones del teorema de **Hull-Dobell** (período máximo).
+  - Alejado de múltiplos triviales de `m` para reducir patrones y correlaciones.
+  - Proporciona buena dispersión en [0,1).
+
+- **c = 12345 (incremento)**
+
+  - Asegura, junto con `m`, la posibilidad de alcanzar el **período completo**.
+
+- **X₀ = semilla inicial**
+  - **Modo dinámico (por defecto):** la semilla se calcula con `time.time_ns()`, generando secuencias distintas en cada ejecución.\_
+
 ## License
 
 This project is licensed under the MIT
