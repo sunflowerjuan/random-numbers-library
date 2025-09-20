@@ -1,7 +1,6 @@
 """
 Random — envoltura (facade) para generación de números pseudoaleatorios.
 
-Resumen rápido:
 - Esta clase centraliza generación de Ri con un LCG (LinealCongruence),
   transformaciones a distribuciones (uniforme y normal) y validación
   estadística de las secuencias con RandomTestFacade.
