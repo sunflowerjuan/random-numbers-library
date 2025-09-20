@@ -7,7 +7,7 @@ Random — envoltura (facade) para generación de números pseudoaleatorios.
 - La semilla se genera dinámicamente en cada llamada usando time.time_ns(),
   por eso cada llamada produce secuencias distintas.
 - Si una secuencia no pasa las pruebas estadísticas, se regenera con otra semilla
-  hasta que pase (ten cuidado con bucles infinitos / rendimiento).
+  hasta que pase.
 """
 
 import time
